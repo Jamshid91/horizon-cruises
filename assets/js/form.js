@@ -34,11 +34,9 @@ function checkInputs() {
 
   if(userNameValue === '') {
     setErrorFor(userName, '#00000026', '#00000005', '')
-  }
- else if(!isName(userNameValue)) {
+  } else if(!isName(userNameValue)) {
     setErrorFor(userName, '#F3F3F3', '#E47169', '*Введите имя на латинице')
-  }
-   else {
+  } else {
     setSuccesFor(userName);
     userName.parentElement.children[2].classList.add('success');
   }
@@ -46,38 +44,32 @@ function checkInputs() {
 
   if(userEmailValue === '') {
     setErrorFor(userEmail, '#00000026', '#00000005', '')
-  }
-  else if(!isEmail(userEmailValue)) {
+  } else if(!isEmail(userEmailValue)) {
     setErrorFor(userEmail, '#F3F3F3', '#E47169', '*Введите Email')
-  }
-  else {
+  } else {
     setSuccesFor(userEmail)
     userEmail.parentElement.children[2].classList.add('success');
   }
 
   if(userPhoneValue === '') {
     setErrorFor(userPhone, '#00000026', '#00000005', '')
-  }
-  else {
+  } else {
     setSuccesFor(userPhone)
     userPhone.parentElement.children[2].classList.add('success');
   }
 
-  if(guestsValue === '') {
+if(guestsValue === '') {
     setErrorFor(guests, '#00000026', '#00000005', '')
-}
-else {
+} else {
   setSuccesFor(guests)
   guests.parentElement.children[2].classList.add('success');
 }
   
-  if(messageValue === '') {
+if(messageValue === '') {
     setErrorFor(message, '#00000026', '#00000005', '')
-}
-else if(!isName(messageValue)) {
+} else if(!isName(messageValue)) {
   setErrorFor(message, '#F3F3F3', '#E47169', '*Пишите латинскими буквами')
-}
- else {
+} else {
   setSuccesFor(message)
   message.parentElement.children[2].classList.add('success');
 }

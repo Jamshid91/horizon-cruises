@@ -194,7 +194,7 @@
                                         </div>
                                         <div class="form-item d-flex flex-column align-items-start">
                                             <label for="guests" class="form__lab"><span>*</span>Number of Guests</label>
-                                            <input type="text" class="form__inp" id="guests">
+                                            <input type="text" class="form__inp" id="guests" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <small class=""></small>
                                         </div>
                                     </div>
