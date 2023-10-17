@@ -308,7 +308,7 @@ input, textarea, select, button {
   margin-top: 40px;
 }
 
-.request-form .form {
+.request-form .form-bg {
   position: absolute;
   top: 100%;
   right: 15px;
@@ -320,6 +320,28 @@ input, textarea, select, button {
           box-shadow: 0px 18px 41px 0px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
+  width: 465px;
+  min-height: 570px;
+}
+
+.request-form .form-success__title {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #3AA7CD;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.request-form .form-success__text {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #191919;
+}
+
+.request-form .form {
   padding: 22px 30px;
   font-family: "Montserrat", sans-serif;
 }
@@ -335,6 +357,18 @@ input, textarea, select, button {
 .request-form .form-item {
   width: 49%;
   margin-top: 12px;
+  position: relative;
+}
+
+.request-form .form small {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  color: #E0473D;
 }
 
 .request-form .form__lab {
@@ -437,7 +471,7 @@ input, textarea, select, button {
 
 .select-list {
   width: 100%;
-  top: 100%;
+  top: 98%;
   border: 1px solid rgba(0, 0, 0, 0.06);
   background: #F3F3F3;
   font-size: 12px;
@@ -445,14 +479,15 @@ input, textarea, select, button {
   font-weight: 400;
   color: #172E49;
   text-align: left;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
   display: none;
   -webkit-animation: animElem .2s ease;
           animation: animElem .2s ease;
   z-index: 44;
   max-height: 120px;
   overflow-y: scroll;
+  border-top: none;
 }
 
 .select-list::-webkit-scrollbar {
@@ -475,7 +510,11 @@ input, textarea, select, button {
 }
 
 .select-list li:hover {
-  background: #A8E9FF;
+  color: #3AA7CD;
+}
+
+.showSelect .select-item {
+  border-bottom: none;
 }
 
 .showSelect .select-item svg {
@@ -489,8 +528,6 @@ input, textarea, select, button {
 }
 
 .main {
-  max-width: 1440px;
-  margin: 0 auto;
   overflow: hidden;
   background: #EAEDEE;
 }
@@ -544,8 +581,13 @@ input, textarea, select, button {
   stroke: #fff;
 }
 
-.main .wrapper-social .social:hover svg {
-  opacity: 0.8;
+.main .wrapper-social .social:hover svg path {
+  fill: #3AA7CD;
+}
+
+.main .wrapper-social .social:hover:first-child svg path {
+  fill: #3AA7CD;
+  stroke: #3AA7CD;
 }
 
 .main .wrapper-social .social:last-child {
@@ -580,6 +622,7 @@ input, textarea, select, button {
   -webkit-transition: .3s all;
   -o-transition: .3s all;
   transition: .3s all;
+  background: #fff;
 }
 
 .main .featured .request-form .form-item {
@@ -951,6 +994,27 @@ input, textarea, select, button {
   background: #3AA7CD;
 }
 
+.main .travel .travel-prev,
+.main .travel .travel-next {
+  width: 53px;
+  height: 53px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .main .travel .travel-prev svg,
 .main .travel .travel-next svg {
   -webkit-transition: .3s all;
@@ -958,16 +1022,14 @@ input, textarea, select, button {
   transition: .3s all;
 }
 
-.main .travel .travel-next:hover svg {
-  -webkit-transform: translateX(10px) scale(1.1);
-      -ms-transform: translateX(10px) scale(1.1);
-          transform: translateX(10px) scale(1.1);
+.main .travel .travel-prev:hover,
+.main .travel .travel-next:hover {
+  background: #172E49;
 }
 
-.main .travel .travel-prev:hover svg {
-  -webkit-transform: translateX(-10px) scale(1.1);
-      -ms-transform: translateX(-10px) scale(1.1);
-          transform: translateX(-10px) scale(1.1);
+.main .travel .travel-prev:hover svg path,
+.main .travel .travel-next:hover svg path {
+  fill: #fff;
 }
 
 .card-page {
@@ -992,11 +1054,6 @@ input, textarea, select, button {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 5;
-  width: 53px;
-  height: 53px;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  background: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1012,11 +1069,17 @@ input, textarea, select, button {
   -webkit-transition: .3s all;
   -o-transition: .3s all;
   transition: .3s all;
+  background: #fff;
 }
 
 .card-page .card-prev:hover,
 .card-page .card-next:hover {
-  opacity: 0.8;
+  background: #172E49;
+}
+
+.card-page .card-prev:hover svg path,
+.card-page .card-next:hover svg path {
+  fill: #fff;
 }
 
 .card-page .card-prev {
@@ -1537,11 +1600,6 @@ input, textarea, select, button {
   color: #3AA7CD;
 }
 
-.about {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .about-wrapper {
   background-image: url(../img/png/about-bg.png);
   background-repeat: no-repeat;
@@ -1651,7 +1709,11 @@ input, textarea, select, button {
 }
 
 .about-swiper-prev:hover, .about-swiper-next:hover {
-  opacity: 0.8;
+  background: #172E49;
+}
+
+.about-swiper-prev:hover svg path, .about-swiper-next:hover svg path {
+  fill: #fff;
 }
 
 .about-swiper-prev {
@@ -1787,7 +1849,11 @@ input, textarea, select, button {
 }
 
 .about .reviews-swiper-prev:hover, .about .reviews-swiper-next:hover {
-  opacity: 0.8;
+  background: #172E49;
+}
+
+.about .reviews-swiper-prev:hover svg path, .about .reviews-swiper-next:hover svg path {
+  fill: #fff;
 }
 
 .about .reviews-swiper-prev {
@@ -1899,8 +1965,6 @@ input, textarea, select, button {
 }
 
 .contact {
-  max-width: 1440px;
-  margin: 0 auto;
   color: #596569;
 }
 
@@ -2109,8 +2173,6 @@ input, textarea, select, button {
 }
 
 .articles {
-  max-width: 1440px;
-  margin: 0 auto;
   color: #596569;
   padding-bottom: 30px;
 }
@@ -2256,8 +2318,6 @@ input, textarea, select, button {
 }
 
 .footer {
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 12px 0 18px;
   background-image: url(../img/png/footer-bg.png);
   background-repeat: no-repeat;
@@ -2398,6 +2458,9 @@ input, textarea, select, button {
 @media (max-width: 991px) {
   .main .wrapper .callUs {
     margin-top: 20px;
+  }
+  .main .wrapper .form-bg {
+    width: 100%;
   }
   .main .wrapper-form {
     margin-top: 20px;

@@ -51,7 +51,7 @@ const cardActive = new Swiper('.card-page-swiper-active', {
   const ourClients = new Swiper('.our-clients-swiper', {
     slidesPerView: 1,
     autoplay: {
-      delay: 2500,
+      delay: 4000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
       },
