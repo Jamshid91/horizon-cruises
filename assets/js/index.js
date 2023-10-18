@@ -18,7 +18,7 @@ selectLists.forEach(list => {
 });
 
 showForm.addEventListener('click', () => {
-    showForm.parentElement.classList.toggle('showForm')
+    showForm.parentElement.parentElement.parentElement.classList.toggle('showForm')
 });
 
 showFilter.addEventListener('click', () => {

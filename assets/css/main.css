@@ -304,14 +304,17 @@ input, textarea, select, button {
 }
 
 .request-form {
-  width: 100%;
-  margin-top: 40px;
+  width: auto;
+  position: absolute;
+  bottom: 95%;
+  right: 0;
+  z-index: 10;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
 }
 
 .request-form .form-bg {
-  position: absolute;
-  top: 100%;
-  right: 15px;
   -webkit-border-radius: 4px;
           border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -344,6 +347,17 @@ input, textarea, select, button {
 .request-form .form {
   padding: 22px 30px;
   font-family: "Montserrat", sans-serif;
+}
+
+.request-form .form-head {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.request-form .form-head svg {
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
 }
 
 .request-form .form__title {
@@ -611,47 +625,6 @@ input, textarea, select, button {
 
 .main .featured {
   font-family: "Montserrat", sans-serif;
-}
-
-.main .featured .request-form .form {
-  position: relative;
-  right: 0;
-  padding: 20px 12px;
-  max-height: 70px;
-  overflow: hidden;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
-  background: #fff;
-}
-
-.main .featured .request-form .form-item {
-  width: 100%;
-}
-
-.main .featured .request-form .form__title {
-  margin-bottom: 0;
-}
-
-.main .featured .request-form .form-head {
-  cursor: pointer;
-  margin-bottom: 8px;
-}
-
-.main .featured .request-form .form-head svg {
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
-}
-
-.main .featured .showForm {
-  max-height: 1500px !important;
-}
-
-.main .featured .showForm .form-head svg {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 .main .featured-title {
@@ -2700,6 +2673,31 @@ input, textarea, select, button {
   }
   .footer-list {
     margin-bottom: 24px;
+  }
+  .request-form {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    max-height: 70px;
+    overflow: hidden;
+  }
+  .request-form .form-bg {
+    width: 100%;
+  }
+  .request-form .form {
+    width: 100%;
+    padding: 22px 12px;
+  }
+  .request-form .form-item {
+    width: 100%;
+  }
+  .showForm {
+    max-height: 1500px !important;
+  }
+  .showForm .form-head svg {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
